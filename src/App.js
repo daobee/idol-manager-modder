@@ -6,10 +6,6 @@ import IdolList from './IdolList';
 import ModList from './ModList';
 
 class App extends React.Component {
-  showSettings (event) {
-    event.preventDefault();
-  }
-
   render () {
     return (
       <div id="outer-container">
