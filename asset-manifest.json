@@ -1,23 +1,23 @@
 {
   "files": {
     "main.css": "/idol-manager-modder/static/css/main.8c8b27cf.chunk.css",
-    "main.js": "/idol-manager-modder/static/js/main.17aa3ff9.chunk.js",
-    "main.js.map": "/idol-manager-modder/static/js/main.17aa3ff9.chunk.js.map",
-    "runtime-main.js": "/idol-manager-modder/static/js/runtime-main.253cad5b.js",
-    "runtime-main.js.map": "/idol-manager-modder/static/js/runtime-main.253cad5b.js.map",
-    "static/js/2.5f95e7db.chunk.js": "/idol-manager-modder/static/js/2.5f95e7db.chunk.js",
-    "static/js/2.5f95e7db.chunk.js.map": "/idol-manager-modder/static/js/2.5f95e7db.chunk.js.map",
-    "static/js/3.2809deb7.chunk.js": "/idol-manager-modder/static/js/3.2809deb7.chunk.js",
-    "static/js/3.2809deb7.chunk.js.map": "/idol-manager-modder/static/js/3.2809deb7.chunk.js.map",
+    "main.js": "/idol-manager-modder/static/js/main.07e16ff5.chunk.js",
+    "main.js.map": "/idol-manager-modder/static/js/main.07e16ff5.chunk.js.map",
+    "runtime-main.js": "/idol-manager-modder/static/js/runtime-main.206b5de4.js",
+    "runtime-main.js.map": "/idol-manager-modder/static/js/runtime-main.206b5de4.js.map",
+    "static/js/2.7e83b87a.chunk.js": "/idol-manager-modder/static/js/2.7e83b87a.chunk.js",
+    "static/js/2.7e83b87a.chunk.js.map": "/idol-manager-modder/static/js/2.7e83b87a.chunk.js.map",
+    "static/js/3.3f295a67.chunk.js": "/idol-manager-modder/static/js/3.3f295a67.chunk.js",
+    "static/js/3.3f295a67.chunk.js.map": "/idol-manager-modder/static/js/3.3f295a67.chunk.js.map",
     "index.html": "/idol-manager-modder/index.html",
     "static/css/main.8c8b27cf.chunk.css.map": "/idol-manager-modder/static/css/main.8c8b27cf.chunk.css.map",
-    "static/js/2.5f95e7db.chunk.js.LICENSE.txt": "/idol-manager-modder/static/js/2.5f95e7db.chunk.js.LICENSE.txt",
+    "static/js/2.7e83b87a.chunk.js.LICENSE.txt": "/idol-manager-modder/static/js/2.7e83b87a.chunk.js.LICENSE.txt",
     "static/media/logo.6ce24c58.svg": "/idol-manager-modder/static/media/logo.6ce24c58.svg"
   },
   "entrypoints": [
-    "static/js/runtime-main.253cad5b.js",
-    "static/js/2.5f95e7db.chunk.js",
+    "static/js/runtime-main.206b5de4.js",
+    "static/js/2.7e83b87a.chunk.js",
     "static/css/main.8c8b27cf.chunk.css",
-    "static/js/main.17aa3ff9.chunk.js"
+    "static/js/main.07e16ff5.chunk.js"
   ]
 }
