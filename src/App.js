@@ -1,47 +1,36 @@
-import logo from './logo.svg';
+import React from 'react';
 import './App.css';
 import { Route, Switch, Link } from "react-router-dom";
+import { pushRotate as Menu } from 'react-burger-menu'
 import IdolList from './IdolList';
 import ModList from './ModList';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <ul id="navigation">
-          <li>
-            <Link to="/">Home</Link>
-          </li>
-          <li>
-          <Link to="/about">About</Link>
-          </li>
-          <li>
-          <Link to="/contact">Contact</Link>
-          </li>
-        </ul>
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <Switch>
-          <Route exact path="/">
-            <IdolList />
-          </Route>
-          <Route path="/about">
-            <ModList />
-          </Route>
-        </Switch>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends React.Component {
+  showSettings (event) {
+    event.preventDefault();
+  }
+
+  render () {
+    return (
+      <div id="outer-container">
+        <Menu pageWrapId={ "page-wrap" } outerContainerId={ "outer-container" }>
+          <Link id="idolList" className="menu-item" to="/idolList">Idols</Link>
+          <Link id="modList" className="menu-item" to="/modList">Mods</Link>
+        </Menu>
+        <div id="page-wrap">
+          <Switch>
+            <Route exact path="/idolList">
+              <IdolList />
+            </Route>
+            <Route path="/modList">
+              <ModList />
+            </Route>
+          </Switch>
+        </div>
+      </div>
+    );
+  }
 }
+
 
 export default App;
