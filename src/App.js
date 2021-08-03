@@ -1,10 +1,12 @@
 import React from 'react';
+import { ToastContainer } from 'react-toastify';
+
 import './App.css';
-import "react-awesome-button/dist/styles.css";
-import { Route, Switch } from "react-router-dom";
+import "react-awesome-button/dist/themes/theme-amber.css";
+import 'react-toastify/dist/ReactToastify.css';
+
 import Sider from './Pages/Sider';
-import IdolList from './Pages/IdolList';
-import ModList from './Pages/ModList';
+import Routes from './Pages/Routes';
 
 class App extends React.Component {
   constructor(props) {
@@ -24,14 +26,9 @@ class App extends React.Component {
   render () {
     return (
       <div id="outer-container">
+        <ToastContainer />
         <Sider isMenuOpen={this.state.isMenuOpen} handleMenu={this.handleMenu}/>
-        <div id="page-wrap">
-          <Switch>
-            <Route exact path="/"><IdolList /></Route>
-            <Route exact path="/idolList"><IdolList /></Route>
-            <Route path="/modList"><ModList /></Route>
-          </Switch>
-        </div>
+        <Routes />
       </div>
     );
   }
