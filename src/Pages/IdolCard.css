@@ -1,0 +1,21 @@
+.idol-card-warpper {
+  border:3px outset red;
+  width: 35em;
+  height: 20em;
+  display: flex;
+}
+.idol-card-profile {
+  height: 100%;
+  width: 60%;
+}
+.idol-card-photo {
+  height: 100%;
+  width: 40%;
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.idol-card-photo img {
+  height: 100%;
+}

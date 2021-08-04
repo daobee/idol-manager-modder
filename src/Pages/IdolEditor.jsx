@@ -12,6 +12,7 @@ class IdolEditor extends React.Component {
         this.db = new Dexie('Idols');
         this.db.version(1).stores({ friends: "++id,name,age" });
         this.state = {file: null};
+        this.addIdol = this.addIdol.bind(this);
         this.handleFile = this.handleFile.bind(this);
     }
 
@@ -19,15 +20,16 @@ class IdolEditor extends React.Component {
         const db = this.db;
         db.transaction('rw', db.friends, async() => {
             // Make sure we have something in DB:
+            let id = '';
             if ((await db.friends.where({name: 'Josephine'}).count()) === 0) {
-                const id = await db.friends.add({name: "Josephine", age: 21});
+                id = await db.friends.add({name: "Josephine", age: 21});
                 toast (`Addded friend with id ${id}`);
             } else {
-                const id = await db.friends.add({name: "Josephine", age: 21 + Math.random()});
+                id = await db.friends.add({name: "Josephine", age: 21 + Math.random(), pic: this.state.file});
                 toast (`Addded friend with id ${id}`);
             }
             // Query:
-            const youngFriends = await db.friends.where("age").below(25).toArray();
+            const youngFriends = await db.friends.where("id").equals(id).toArray();
             // Show result:
             toast ("My young friends: " + JSON.stringify(youngFriends));
         
@@ -55,14 +57,13 @@ class IdolEditor extends React.Component {
         return (
             <div style={{ color: "black"}}>
                 <Button type="primary" onPress={ () => this.props.history.goBack() } >Back</Button>
-                <Button type="primary" onPress={ () => this.addIdol() } >Button</Button>
                 <Dropzone onDrop={ this.handleFile }>
                     {({getRootProps, getInputProps, isDragActive}) => (
                         <section>
                             <div {...getRootProps()}>
                                 <h2>IdolEditor Page</h2>
                                 <p>IdolEditor about...</p>
-                                { file ? <img src={ window.URL.createObjectURL(file) } alt="idol" /> : null}
+                                { file ? (<img src={ window.URL.createObjectURL(file) } alt="idol" />) : null}
                                 <input {...getInputProps()} />
                                 {
                                     isDragActive ?
@@ -73,6 +74,7 @@ class IdolEditor extends React.Component {
                         </section>
                     )}
                 </Dropzone>
+                <Button type="primary" onPress={ () => this.addIdol() } >保存</Button>
             </div>
         )
     }
